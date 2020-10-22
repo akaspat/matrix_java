@@ -23,5 +23,20 @@ public class Main {
         }
         matrix.initMatrixWithRandomValue(-5, 15);
         matrix.printMatrix();
+
+        for (int c = 0; c < matrix.getCols(); c++){
+            for (int r = 0; r < matrix.getRows(); r++){
+                if (r + c + 1 < matrix.getRows()){
+                    try {
+                        matrix.setElementByIndex(r, c,4);
+                    }
+                    catch (Matrix.SizeMatrixException ex){
+                        System.out.println(ex.getInfo());
+                    }
+                }
+            }
+        }
+
+        matrix.printMatrix();
     }
 }
